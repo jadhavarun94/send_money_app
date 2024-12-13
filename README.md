@@ -57,8 +57,8 @@ lib/
 
 ### **Step 2: Clone the Repository**
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone https://github.com/jadhavarun94/send_money_app/tree/master 
+cd send_money_app
 ```
 
 ### **Step 3: Install Dependencies**
