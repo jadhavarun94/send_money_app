@@ -35,7 +35,7 @@ A Flutter application built using the **BLoC architecture**, **MVVM pattern**, a
    - Thorough tests for Login, Send Money, and Transaction History functionality.
   
 8. **Credentials to the app:**
-   - user name : testuser.
+   - username: testuser
    - password: password
 
 ---
