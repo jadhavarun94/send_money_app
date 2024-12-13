@@ -4,6 +4,8 @@ A Flutter application built using the **BLoC architecture**, **MVVM pattern**, a
 
 ---
 
+
+
 ## **Features**
 
 1. **Login Screen:**
@@ -31,6 +33,10 @@ A Flutter application built using the **BLoC architecture**, **MVVM pattern**, a
 
 7. **Unit and Integration Testing:**
    - Thorough tests for Login, Send Money, and Transaction History functionality.
+  
+8. **Credentials to the app:**
+   - user name : testuser.
+   - password: password
 
 ---
 
@@ -172,30 +178,5 @@ flutter test
 
 ---
 
-## **Contributing**
 
-1. Fork the repository.
-2. Create a feature branch:
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Add feature description"
-   ```
-4. Push to the branch:
-   ```bash
-   git push origin feature-name
-   ```
-5. Create a pull request.
-
----
-
-## **License**
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
----
-
-Happy Coding! 🎉
 
