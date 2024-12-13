@@ -1,32 +1,18 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:send_money_app_assignment/repository/user_repository.dart';
 import '../events/wallet_event.dart';
 import '../states/wallet_state.dart';
 
 class WalletBloc extends Bloc<WalletEvent, WalletState> {
-  final UserRepository userRepository;
+  double _balance = 500.0; // Default wallet balance
 
-  WalletBloc(this.userRepository) : super(WalletInitial()) {
-    on<FetchBalance>((event, emit) async {
-      try {
-        final user = await userRepository.getUser();
-        if (user != null) {
-          emit(WalletLoaded(user['balance']));
-        } else {
-          emit(WalletError("Failed to fetch balance."));
-        }
-      } catch (e) {
-        emit(WalletError("An error occurred."));
-      }
+  WalletBloc() : super(WalletInitial()) {
+    on<LoadWalletBalance>((event, emit) {
+      emit(WalletBalanceLoaded(_balance));
     });
 
-    on<UpdateBalance>((event, emit) async {
-      try {
-        await userRepository.updateBalance(event.newBalance);
-        emit(WalletLoaded(event.newBalance));
-      } catch (e) {
-        emit(WalletError("Failed to update balance."));
-      }
+    on<UpdateWalletBalance>((event, emit) {
+      _balance -= event.sentAmount;
+      emit(WalletBalanceLoaded(_balance));
     });
   }
 }

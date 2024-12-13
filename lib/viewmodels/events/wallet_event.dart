@@ -5,13 +5,13 @@ abstract class WalletEvent extends Equatable {
   List<Object?> get props => [];
 }
 
-class FetchBalance extends WalletEvent {}
+class LoadWalletBalance extends WalletEvent {}
 
-class UpdateBalance extends WalletEvent {
-  final double newBalance;
+class UpdateWalletBalance extends WalletEvent {
+  final double sentAmount;
 
-  UpdateBalance(this.newBalance);
+  UpdateWalletBalance(this.sentAmount);
 
   @override
-  List<Object?> get props => [newBalance];
+  List<Object?> get props => [sentAmount];
 }

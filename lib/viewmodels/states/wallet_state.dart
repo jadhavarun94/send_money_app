@@ -7,20 +7,20 @@ abstract class WalletState extends Equatable {
 
 class WalletInitial extends WalletState {}
 
-class WalletLoaded extends WalletState {
+class WalletBalanceLoaded extends WalletState {
   final double balance;
 
-  WalletLoaded(this.balance);
+  WalletBalanceLoaded(this.balance);
 
   @override
   List<Object?> get props => [balance];
 }
 
 class WalletError extends WalletState {
-  final String message;
+  final String error;
 
-  WalletError(this.message);
+  WalletError(this.error);
 
   @override
-  List<Object?> get props => [message];
+  List<Object?> get props => [error];
 }

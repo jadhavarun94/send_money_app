@@ -7,12 +7,12 @@ class UserRepository {
     'balance': 5000.00,
   };
 
-  Future<Map<String, dynamic>?> authenticate({
+  Future<User?> authenticate({
     required User user,
   }) async {
     await Future.delayed(const Duration(seconds: 1));
     if (_user['username'] == user.userName && _user['password'] == user.password) {
-      return _user;
+      return user;
     }
     return null;
   }
